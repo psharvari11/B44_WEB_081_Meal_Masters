@@ -1,31 +1,40 @@
-// backend/server.js
 const express = require("express");
+const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
+const connect=require("./config/db.js")
+// Load env variables
+dotenv.config();
 
-const userRoutes = require("./routes/userRoutes");
-const userProfileRouter = require("./routes/userProfile.routes");
-const recipeRouter = require("./routes/recipe.routes");
-const mealPlanRouter = require("./routes/mealplan.routes");
-
+// Initialize app
 const app = express();
-app.use(cors());
-app.use(express.json());
-app.use("/api", userProfileRouter);
-app.use("/api", recipeRouter);
-app.use("/api", mealPlanRouter);
-app.use("/api/users", userRoutes); // route prefix for user auth
 
+// Middleware
+app.use(cors());
+app.use(express.json()); // Parses incoming JSON requests
+
+// Routes
+app.use("/api/auth", require("./routes/userRoutes"));
+app.use("/api/profile", require("./routes/userProfile.routes"));
+app.use("/api/meal-plans", require("./routes/mealplan.routes"));
+app.use("/api/recipes", require("./routes/recipe.routes"));
+app.use("/api/nutrition-log", require("./routes/nutritionLogRoutes"));
+app.use("/api/grocery-list", require("./routes/groceryListRoutes"));
+
+// Basic test route
 app.get("/", (req, res) => {
-  res.send("Welcome to MealMaster API!");
+  res.send("🌟 Nutrition App Backend is running!");
 });
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("MongoDB connected");
-    app.listen(process.env.PORT, () => {
-      console.log(`Server running on port ${process.env.PORT}`);
+const PORT = process.env.PORT 
+connect()
+.then(()=>{
+    app.listen(PORT,()=>{
+        console.log(`server is running on ${PORT}`)
     });
-  })
-  .catch(err => console.error(err));
+})
+.catch((error)=>{
+    console.log("Unable to connect to sever",error);
+    process.exit(1);
+    
+})
