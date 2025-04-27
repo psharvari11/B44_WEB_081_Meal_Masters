@@ -901,6 +901,8 @@ import Dashboard from '../pages/Dashboard';
 import UserProfile from '../pages/UserProfile';
 import Layout from '../pages/Layout';
 import Recipe from '../pages/Recipe';
+import MealPlanner from '../pages/Mealplanner';
+import NutritionLog from '../pages/Nutritionlog';
 
 const App = () =>{
   return (
@@ -912,6 +914,8 @@ const App = () =>{
         <Route element={<Layout/>}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/recipes" element={<Recipe />} />
+          <Route path="/meal-planner" element={<MealPlanner />} />
+          <Route path="/nutrition-logger" element={<NutritionLog />} />
           <Route path="/profile" element={<UserProfile />} />
         </Route>
         {/* Other routes */}

@@ -20,8 +20,8 @@ const Sidebar = () => {
     { name: "Dashboard", path: "/dashboard", icon: <FiEdit /> },
     { name: "Recipe Maker", path: "/recipes", icon: <FiEdit /> },
     { name: "Meal Planner", path: "/meal-planner", icon: <FiClipboard /> },
-    { name: "Nutrition Logger", path: "/nutrition-logger", icon: <FiList /> },
-    { name: "Grocery List", path: "/grocery-list", icon: <FiList /> },
+    // { name: "Nutrition Logger", path: "/nutrition-logger", icon: <FiList /> },
+    // { name: "Grocery List", path: "/grocery-list", icon: <FiList /> },
     { name: "User Profile", path: "/profile", icon: <FiUser /> },
   ];
 

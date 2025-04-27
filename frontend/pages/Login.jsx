@@ -137,7 +137,7 @@ const Login = () => {
         { headers: { "Content-Type": "application/json" } }
       );
 
-      console.log("Response:", res.data);
+      // console.log("Response:", res.data);
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
