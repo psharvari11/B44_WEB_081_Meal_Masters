@@ -37,12 +37,12 @@ To set up the project locally, follow these steps:
 ### 1. Clone the repository
 git clone https://github.com/psharvari11/B44_WEB_081_Meal_Masters.git
 
-##2. Install Backend Dependencies
+### 2. Install Backend Dependencies
 cd backend
 npm install  
 
 
-##3. Setup Environment Variables
+## 3. Setup Environment Variables
 Create a .env file in the backend directory and add the following:
 
 MONGO_URI=your_mongodb_connection_string
@@ -50,18 +50,18 @@ JWT_SECRET=your_jwt_secret
 
 
 
-##4. Install Frontend Dependencies
+## 4. Install Frontend Dependencies
 
 cd frontend
 npm install
 
-##5. Run the Backend Server
+## 5. Run the Backend Server
 
 cd backend
 npm run dev
 
 
-##6. Run the Frontend
+## 6. Run the Frontend
 
 cd frontend
 npm run dev
