@@ -9,7 +9,7 @@ Key Features:
 - **Recipe Management**: Store and manage your favorite recipes, making it easier to add meals to your plan.
 
 ---
-
+## Deployed Link :https://meal-master-081.netlify.app/
 ## Features 🌟
 
 - **User Authentication**: Secure user login and registration using JWT and OAuth.
