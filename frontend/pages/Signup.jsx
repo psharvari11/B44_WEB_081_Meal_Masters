@@ -139,7 +139,7 @@ const SignUp = () => {
           },
         }
       );
-      console.log(response.data); // log the response for debugging
+      // console.log(response.data); // log the response for debugging
       setLoading(false);
       navigate("/login"); // Redirect to login page after successful registration
     } catch (err) {
